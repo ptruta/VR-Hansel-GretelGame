@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
 
 	IEnumerator SceneTransition(int scene)
 	{
-		yield return new WaitForSeconds(fade.BeginFade(1));
+		yield return new WaitForSeconds(fade.BeginFade(0));
 
 		SceneManager.LoadScene(scene, LoadSceneMode.Single);
 	}

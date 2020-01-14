@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
 	public static int difficulty;
 	private string[] difficultyNames = { "NaN", "Easy", "Medium", "Hard" };
+	private string[] playerNames = {"NaN","Hansel","Gretel","Hansel"};
+	public static string playerSet;
 
 	private float score;
 	public Text scoreUI;
@@ -14,7 +16,10 @@ public class GameManager : MonoBehaviour
 	public Text highscoreUI;
 
 	public Transform player;
+	public Transform player1;
 	public PlayerMovement movement;
+	public PlayerMovement movement1;
+	public static int player2;
 
 	public GameObject obstaclePrefab;
 	public Transform obstacles;
@@ -58,7 +63,8 @@ public class GameManager : MonoBehaviour
 		}
 
 		UpdateHighscore();
-		highscoreUI.text = difficultyNames[difficulty] + " highscore: " + highscore;
+		
+		highscoreUI.text = difficultyNames[difficulty] + " highscore: " + highscore + "  Player Name: " + playerNames[difficulty];
 
 		StartCoroutine(DeathOverlayTransition());
 	}
@@ -118,6 +124,19 @@ public class GameManager : MonoBehaviour
 	private void Start()
 	{
 		fade.BeginFade(-1);
+
+		if (difficulty == 1){
+			player.gameObject.SetActive(true);
+			player1.gameObject.SetActive(false);
+		}
+		if (difficulty == 2){
+			player.gameObject.SetActive(false);
+			player1.gameObject.SetActive(true);
+		}
+		if (difficulty == 3){
+			player.gameObject.SetActive(true);
+			player1.gameObject.SetActive(false);
+		}
 
 		// Invoke obstacle spawning, frequency depends on difficulty
 		InvokeRepeating("Spawn", 1f, 0.5f / difficulty);

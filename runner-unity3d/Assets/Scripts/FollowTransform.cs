@@ -8,7 +8,7 @@ public class FollowTransform : MonoBehaviour
 	private void Update()
 	{
 		Vector3 newPosition;
-
+		
 		newPosition = transform.position;
 		newPosition[axis] = transformObject.position[axis];
 
