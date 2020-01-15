@@ -727,7 +727,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44738561}
   m_LocalRotation: {x: 0.06367013, y: -0.08734881, z: 0.007153102, w: 0.9941153}
-  m_LocalPosition: {x: -0.05, y: 3.06, z: -5.27}
+  m_LocalPosition: {x: -0.05, y: 5, z: -5.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 214697277}
@@ -746,7 +746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0ce819f647cd646a0b31e636640963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transformObject: {fileID: 1975119672}
+  transformObject: {fileID: 1224504320}
+  transformObject1: {fileID: 1131069249}
   axis: 0
 --- !u!81 &44738564
 AudioListener:
@@ -985,7 +986,7 @@ Rigidbody:
   m_GameObject: {fileID: 137000803}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 8
+  m_Drag: 20
   m_AngularDrag: Infinity
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -1196,6 +1197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformObject: {fileID: 1224504320}
+  transformObject1: {fileID: 1131069249}
   axis: 2
 --- !u!4 &214697277
 Transform:
@@ -1512,8 +1514,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350259408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -751.5004, y: -295.2, z: -0.2}
-  m_LocalScale: {x: 2, y: 1.5, z: -39.6171}
+  m_LocalPosition: {x: -744.5022, y: -293.2, z: 0.4}
+  m_LocalScale: {x: 1.8, y: 1.3, z: -39.6171}
   m_Children:
   - {fileID: 483293956}
   - {fileID: 1065994997}
@@ -1958,7 +1960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreUI: {fileID: 270040365}
   highscoreUI: {fileID: 935205720}
-  player: {fileID: 1975119672}
+  player: {fileID: 1131069249}
   player1: {fileID: 1224504320}
   movement: {fileID: 1975119669}
   movement1: {fileID: 137000807}
@@ -2695,7 +2697,7 @@ PrefabInstance:
     - target: {fileID: 54084939265967506, guid: 0e74cf81e6fd82546b4797f71ceffb81,
         type: 3}
       propertyPath: m_Drag
-      value: 8
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 54084939265967506, guid: 0e74cf81e6fd82546b4797f71ceffb81,
         type: 3}
@@ -2950,6 +2952,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 13400000, guid: ad26fb565d63e0b4a99ce7200996b583,
         type: 2}
+    - target: {fileID: 4204117788712988, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00024358722
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204117788712988, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.00031511762
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 136606663363984694, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
     - {fileID: 114018963531894940, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
@@ -2981,6 +2991,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!4 &1131069249 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81,
+    type: 3}
+  m_PrefabInstance: {fileID: 1131069246}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1179952506
 GameObject:
   m_ObjectHideFlags: 0
@@ -4622,12 +4638,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!4 &1975119672 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1131069246}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1975119673
 Animator:
   serializedVersion: 3
@@ -4637,8 +4647,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975119668}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: bfd44368c17054c48adce6072f660c3e, type: 3}
-  m_Controller: {fileID: 9100000, guid: 776a014d31272da45a8b7fedd14cc525, type: 2}
+  m_Avatar: {fileID: 9000000, guid: b4e36754434588f429086cb0bd1325ba, type: 3}
+  m_Controller: {fileID: 9100000, guid: bb3b801b400af0b46a15a691ab16aa40, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 1
