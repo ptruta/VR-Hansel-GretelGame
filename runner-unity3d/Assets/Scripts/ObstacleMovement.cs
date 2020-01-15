@@ -6,7 +6,7 @@ public class ObstacleMovement : MonoBehaviour
 {
 	public float force = 500f;
 	// Collision velocity (X - angular multiplier)
-	public Vector3 collisionVelocity = new Vector3(10f, 5f, 5f);
+	public Vector3 collisionVelocity = new Vector3(20f, 5f, 10f);
 
 	private void OnCollisionEnter(Collision collision)
 	{
@@ -33,6 +33,6 @@ public class ObstacleMovement : MonoBehaviour
 	private void Update()
 	{
 		// Move obstacle on Z axis (towards player)
-		GetComponent<Rigidbody>().AddForce(0f, 0f, -force);
+		GetComponent<Rigidbody>().AddForce(1f, 1.5f, -force);
 	}
 }

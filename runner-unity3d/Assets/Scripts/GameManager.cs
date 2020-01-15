@@ -36,6 +36,14 @@ public class GameManager : MonoBehaviour
 
 		deathOverlayUI.SetActive(true);
 
+		foreach (Transform obstacle in obstacles)
+		{
+			obstacle.gameObject.SetActive(false);
+		}
+
+		player.gameObject.SetActive(false);
+		player1.gameObject.SetActive(false);
+
 		yield return new WaitForSeconds(fade.BeginFade(-1));
 	}
 
@@ -85,19 +93,32 @@ public class GameManager : MonoBehaviour
 		int i;
 
 		// Spawn 2 new obstacles
-		for (i = -9; i < 9; i += 5)
+		for (i = -8; i < 8; i += 7)
 		{
 			Instantiate(obstaclePrefab,
-			            new Vector3(Mathf.Floor(Random.Range(i, i + 5)), 1, obstacleStartX),
+			            new Vector3(Mathf.Floor(Random.Range(i, i + 7)), 1, obstacleStartX),
 			            Quaternion.identity, obstacles);
 		}
 	}
 
 	private void Update()
 	{
+		if (difficulty == 1){
+			player.gameObject.SetActive(true);
+			player1.gameObject.SetActive(false);
+		}
+		if (difficulty == 2){
+			player.gameObject.SetActive(false);
+			player1.gameObject.SetActive(true);
+		}
+		if (difficulty == 3){
+			player.gameObject.SetActive(true);
+			player1.gameObject.SetActive(false);
+		}
+
 		if (FindObjectOfType<PlayerMovement>().enabled)
 		{
-			score += Time.deltaTime * 10;
+			score += Time.deltaTime * 3;
 			scoreUI.text = "Score: " + (int)score;
 		}
 
