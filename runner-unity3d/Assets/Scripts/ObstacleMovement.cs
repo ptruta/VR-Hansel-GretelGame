@@ -6,7 +6,7 @@ public class ObstacleMovement : MonoBehaviour
 {
 	public float force = 500f;
 	// Collision velocity (X - angular multiplier)
-	public Vector3 collisionVelocity = new Vector3(25f, 5f, 10f);
+	public Vector3 collisionVelocity = new Vector3(10f, 5f, 5f);
 
 	private void OnCollisionEnter(Collision collision)
 	{

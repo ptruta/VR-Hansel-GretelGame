@@ -85,10 +85,10 @@ public class GameManager : MonoBehaviour
 		int i;
 
 		// Spawn 2 new obstacles
-		for (i = -7; i < 7; i += 7)
+		for (i = -4; i < 4; i += 4)
 		{
 			Instantiate(obstaclePrefab,
-			            new Vector3(Mathf.Floor(Random.Range(i, i + 7)), 1, obstacleStartX),
+			            new Vector3(Mathf.Floor(Random.Range(i, i + 8)), 1, obstacleStartX),
 			            Quaternion.identity, obstacles);
 		}
 	}
