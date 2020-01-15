@@ -647,7 +647,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 70fc04cfdfec61e41a6ab5ac5d33dd10, type: 2}
+      objectReference: {fileID: 9100000, guid: 776a014d31272da45a8b7fedd14cc525, type: 2}
     - target: {fileID: 95879256730774250, guid: 1e8e1924bb442334c9125455634bb567,
         type: 3}
       propertyPath: m_WarningMessage
@@ -1423,7 +1423,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.0482e-41, y: 1.05e-43, z: 4.5904e-41, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 2.4e-43, z: 9.005e-42, w: 1.05e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

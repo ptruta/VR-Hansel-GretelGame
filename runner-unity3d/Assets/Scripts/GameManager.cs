@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
 		int i;
 
 		// Spawn 2 new obstacles
-		for (i = -8; i < 8; i += 7)
+		for (i = -7; i < 7; i += 7)
 		{
 			Instantiate(obstaclePrefab,
 			            new Vector3(Mathf.Floor(Random.Range(i, i + 7)), 1, obstacleStartX),
@@ -118,8 +118,15 @@ public class GameManager : MonoBehaviour
 
 		if (FindObjectOfType<PlayerMovement>().enabled)
 		{
-			score += Time.deltaTime * 3;
-			scoreUI.text = "Score: " + (int)score;
+			scoreUI.text = "Watch out for obstacles!!!";
+			while(!FindObjectOfType<ObstacleMovement>())
+				scoreUI.text = "Watch out for obstacles!!!";
+
+			if (FindObjectOfType<ObstacleMovement>()){
+				scoreUI.text = "Watch out for obstacles!!!";
+				score += Time.deltaTime * 10;
+				scoreUI.text = "Score: " + (int)score;
+			}
 		}
 
 		if (Input.GetKey("r"))
