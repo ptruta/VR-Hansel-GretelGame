@@ -115,18 +115,11 @@ public class GameManager : MonoBehaviour
 			player.gameObject.SetActive(true);
 			player1.gameObject.SetActive(false);
 		}
-
+		
 		if (FindObjectOfType<PlayerMovement>().enabled)
 		{
-			scoreUI.text = "Watch out for obstacles!!!";
-			while(!FindObjectOfType<ObstacleMovement>())
-				scoreUI.text = "Watch out for obstacles!!!";
-
-			if (FindObjectOfType<ObstacleMovement>()){
-				scoreUI.text = "Watch out for obstacles!!!";
-				score += Time.deltaTime * 10;
-				scoreUI.text = "Score: " + (int)score;
-			}
+			score += Time.deltaTime * 10;
+			scoreUI.text = "Score: " + (int)score;
 		}
 
 		if (Input.GetKey("r"))
