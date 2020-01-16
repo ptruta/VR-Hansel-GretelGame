@@ -15,6 +15,8 @@ public class MainMenu : MonoBehaviour
 
 	public void ExitGame()
 	{
+		StartCoroutine(SceneTransition(2));
+
 		Application.Quit();
 	}
 
